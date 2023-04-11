@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=VBAT Pin=B1-3
+Added Component: Designator=SW1(SW_1WAY)
+Added Pin To Net: NetName=VBAT Pin=SW1-2
+Added Pin To Net: NetName=BAT Pin=B1-3
+Added Pin To Net: NetName=BAT Pin=SW1-1
+Added Net: Name=BAT
+Added Member To Class: ClassName=Power Member=Component SW1 SW_1WAY_DIP
+Added Room: Name=Light Sensor Prototype
+Added Room: Name=Power

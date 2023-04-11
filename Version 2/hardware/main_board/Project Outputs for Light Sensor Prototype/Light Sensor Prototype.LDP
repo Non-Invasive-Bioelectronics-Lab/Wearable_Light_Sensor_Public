@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=light sensor prototype-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=light sensor prototype-slotholes.txt|DrillLayers=gtl,gbl

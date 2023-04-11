@@ -1,0 +1,48 @@
+Removed Pin From Net: NetName=NetC2_2 Pin=FU_1-1
+Removed Pin From Net: NetName=VIN Pin=USB_FEM_1-A4
+Removed Pin From Net: NetName=VIN Pin=USB_FEM_1-A9
+Removed Pin From Net: NetName=VIN Pin=USB_FEM_1-B4
+Removed Pin From Net: NetName=VIN Pin=USB_FEM_1-B9
+Removed Member From Class: ClassName=Sheet1 Member=FU_1
+Added Component: Designator=F1(FP-0466-MFG)
+Add component (AddParameter): Name = "Approvals"; Value = "UL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "1206"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "3216"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "1206"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current"; Value = "500mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating"; Value = "500mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DC Cold Resistance"; Value = "248mR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "1.52mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Fuse Type"; Value = "Board Mount (Cartridge Style Excluded)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.023inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Housing Material"; Value = "Ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "3.18mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "90°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "5000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Dissipation"; Value = "79.2mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "220mR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "SlimLine™ 466"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (AC)"; Value = "63V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "63V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.06inch"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VIN Pin=F1-2
+Added Pin To Net: NetName=NetC2_2 Pin=USB_MALE_1-A4
+Added Pin To Net: NetName=NetC2_2 Pin=USB_MALE_1-A9
+Added Pin To Net: NetName=NetC2_2 Pin=USB_MALE_1-B4
+Added Pin To Net: NetName=NetC2_2 Pin=USB_MALE_1-B9
+Change Net Name : Old Net Name=NetC2_2 New Net Name=VO
+Change Net Name : Old Net Name=VIN New Net Name=NetC1_2
+Added Pin To Net: NetName=VIN Pin=D_1-2
+Added Pin To Net: NetName=VIN Pin=F1-1
+Added Pin To Net: NetName=VIN Pin=USB_FEM_1-A4
+Added Pin To Net: NetName=VIN Pin=USB_FEM_1-A9
+Added Pin To Net: NetName=VIN Pin=USB_FEM_1-B4
+Added Pin To Net: NetName=VIN Pin=USB_FEM_1-B9
+Added Net: Name=VIN
+Added Member To Class: ClassName=Sheet1 Member=Component F1 0466.500NRHF
+Added Member To Class: ClassName=Sheet1 Member=Component USB_MALE_1 GT-USB-8012A
+Added Room: Name=Sheet1

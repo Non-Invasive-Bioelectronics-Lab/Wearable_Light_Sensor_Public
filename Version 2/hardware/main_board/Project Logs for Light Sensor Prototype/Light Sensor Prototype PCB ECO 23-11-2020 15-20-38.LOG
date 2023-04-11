@@ -1,0 +1,5 @@
+Change Component DesignItemId : Designator=U2 Old DesignItemId=BL652-SA-01 New DesignItemId=BL652
+Change Component Footprint: Designator=U2 Old Footprint=XCVR_BL652-SA-01 New Footprint=BL652
+Change Component Comment : Designator=U2 Old Comment=BL652-SA-01 New Comment=BL652
+Change Component Description : Designator=U2 Old Description=Bluetooth Bluetooth v5.0 Transceiver Module 2.4GHz Integrated, Chip Surface Mount New Description=
+Change component parameters: Designator = "U2" ("U2"); Footprint = "XCVR_BL652-SA-01"; UniqueID = "\ASYMVYNW" ("\ASYMVYNW")

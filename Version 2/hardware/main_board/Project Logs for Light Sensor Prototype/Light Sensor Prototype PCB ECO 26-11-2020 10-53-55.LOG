@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=CHRG_DETECT Pin=U2-9
+Added Member To Class: ClassName=Power Member=Component R9 Thick Film
+Added Room: Name=Light Sensor Prototype
+Added Room: Name=Power

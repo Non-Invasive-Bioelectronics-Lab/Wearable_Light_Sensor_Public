@@ -1,0 +1,3 @@
+Added Component: Designator=*(Logo)
+Added Member To Class: ClassName=fr4_light_sensor_programmer Member=Component * NIBS_Logo
+Added Room: Name=fr4_light_sensor_programmer

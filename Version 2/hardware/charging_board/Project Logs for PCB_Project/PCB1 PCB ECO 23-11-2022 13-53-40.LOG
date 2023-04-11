@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=VIN Pin=D1-2
+Added Pin To Net: NetName=NetC1_2 Pin=D1-2
+Added Room: Name=Sheet1

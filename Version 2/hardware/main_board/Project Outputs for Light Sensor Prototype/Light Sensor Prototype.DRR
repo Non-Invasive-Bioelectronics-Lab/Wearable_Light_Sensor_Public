@@ -1,0 +1,21 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Light Sensor Prototype.PcbDoc   01/07/2021  12:01:55
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Light Sensor Prototype-RoundHoles.TXT
+ASCII SlotHoles File : Light Sensor Prototype-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      16mil (0.399mm)                                           Round             62        PTH        0.00inch (0.00mm)
+T2      24mil (0.599mm)                                           Round             12        PTH        0.00inch (0.00mm)
+T3      26mil (0.65mm)                                            Slot              4         PTH        0.00inch (0.00mm)
+T4      71mil (1.801mm)                                           Round             1         PTH        0.00inch (0.00mm)
+T5      94mil (2.4mm)                                             Round             2         PTH        0.00inch (0.00mm)
+T6      24mil (0.599mm)                                           Round             1         NPTH       0.00inch (0.00mm)
+T7      25mil (0.63mm)                                            Round             2         NPTH       0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              84
+
+Total Processing Time (hh:mm:ss) : 00:00:00

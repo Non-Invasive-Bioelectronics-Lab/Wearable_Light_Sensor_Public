@@ -1,0 +1,5 @@
+Added Component: Designator=B?(BC-2404)
+Added Pin To Net: NetName=VBAT Pin=B?-1
+Added Pin To Net: NetName=GND Pin=B?-2
+Added Pin To Net: NetName=GND Pin=B?-3
+Added Member To Class: ClassName=Power Member=Component B? 2450 Cell Holder

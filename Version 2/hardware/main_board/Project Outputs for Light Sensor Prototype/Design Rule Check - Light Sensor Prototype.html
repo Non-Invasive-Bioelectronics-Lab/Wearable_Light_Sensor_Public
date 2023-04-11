@@ -1,0 +1,375 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">01/07/2021</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11:31:41</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc" class="file"><acronym title="C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc">C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">17</td></tr>
+</table>
+</td>
+</table><a name="IDJ5FRHEKWPHJ1NSSC2ZEMDSAPMJZ4SLMX2PQDIDNGFDUXY0DXQ5GL"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4UJSM0NWYHWNCMNHXDI33XRJ5GUFXXQMDOJS05DHVFDILMDLWQGC">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDG0BFZH3OH0TNDY0LEI1V1MPVZHULDFW2XKMREXI0H3BQB4EQBBSC">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJBS3JC4RZ4GTHPWPN3LFO2GVSF3EU2Y3ZMKF4X35T2IXERP25WC">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNDJ2BRILYWNSGPKYVKRJAFXDYDK4QJ3JEBBCLMHZMD2OP3XCUHEN">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRQ023GO25S50G1YEVTSYL5EVDGZYMSB0D10OBIMPGI2E25CTZQHL">Width Constraint (Min=0.15mm) (Max=0.5mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZGFH4B1US2P4LTX4FJET05KRJMHUNOLCQS3TT3BZ2QCSKECQWXWE">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHAVOMGWGSZLIFROORNOGSZD3JHZVMPHI5RLT2DNMLCY4HONSMEDM">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDK41PBUIIPQTFJBPQDOQMQ4MJPCJMQG2MNLCL31JIVRGUULGDHSHF">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCFUNBOUAOKKQHT52I1DWQLP1VOED5EKOZ2HQJFUD0OSVADJK30D">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</a></td>
+<td class="column2">16</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPJHCZOJC4WZFO4DCK3SJ1Q4SLPJ3GU0KS0NUZJZA0UB2Z3IEDJD">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFTTUNLW1YFLXJNJQBOVMYZ0BAPIG2RPOOIBIHRE3CT4NCMNC1A3K">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">17</td>
+</tr>
+</table><br><a name="IDK41PBUIIPQTFJBPQDOQMQ4MJPCJMQG2MNLCL31JIVRGUULGDHSHF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4953.844mil|Location2.X=4961.511mil|Location1.Y=2472.545mil|Location2.Y=2480.211mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4953.844mil|Location2.X=4961.511mil|Location1.Y=2472.545mil|Location2.Y=2480.211mil|Absolute=True">Hole To Hole Clearance Constraint: (Collision &lt; 0.254mm) Between Pad J1-(125.925mm,62.9mm) on Multi-Layer And Pad J1-(125.925mm,62.9mm) on Multi-Layer Pad/Via Touching Holes</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDCFUNBOUAOKKQHT52I1DWQLP1VOED5EKOZ2HQJFUD0OSVADJK30D"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5451.267mil|Location2.X=5456.204mil|Location1.Y=1643.201mil|Location2.Y=1648.138mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5451.267mil|Location2.X=5456.204mil|Location1.Y=1643.201mil|Location2.Y=1648.138mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Arc (138.525mm,41.925mm) on Top Overlay And Pad C8-1(138.825mm,41.625mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6189.052mil|Location2.X=6193.989mil|Location1.Y=2603.827mil|Location2.Y=2608.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6189.052mil|Location2.X=6193.989mil|Location1.Y=2603.827mil|Location2.Y=2608.764mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Arc (157.15mm,66.15mm) on Bottom Overlay And Pad C11-1(157.1mm,66.5mm) on Bottom Layer [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5610.563mil|Location2.X=5615.5mil|Location1.Y=2879.697mil|Location2.Y=2884.634mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5610.563mil|Location2.X=5615.5mil|Location1.Y=2879.697mil|Location2.Y=2884.634mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad B1-3(140.021mm,75.747mm) on Bottom Layer And Track (133.925mm,73.207mm)(144.085mm,73.207mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5807.993mil|Location2.X=5812.93mil|Location1.Y=1755.768mil|Location2.Y=1760.706mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5807.993mil|Location2.X=5812.93mil|Location1.Y=1755.768mil|Location2.Y=1760.706mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad U2-1(147.444mm,44.942mm) on Top Layer And Track (147.586mm,44.659mm)(148.929mm,43.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5478.016mil|Location2.X=5485.954mil|Location1.Y=2083.526mil|Location2.Y=2091.535mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5478.016mil|Location2.X=5485.954mil|Location1.Y=2083.526mil|Location2.Y=2091.535mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.047mm &lt; 0.15mm) Between Pad U2-16(139.489mm,52.897mm) on Top Layer And Track (139.03mm,53.215mm)(139.171mm,53.074mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.046mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5497.503mil|Location2.X=5505.512mil|Location1.Y=2118.197mil|Location2.Y=2126.135mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5497.503mil|Location2.X=5505.512mil|Location1.Y=2118.197mil|Location2.Y=2126.135mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.046mm &lt; 0.15mm) Between Pad U2-17(139.984mm,54.028mm) on Top Layer And Track (139.03mm,53.215mm)(139.666mm,53.852mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.046mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5720.952mil|Location2.X=5728.96mil|Location1.Y=2341.645mil|Location2.Y=2349.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5720.952mil|Location2.X=5728.96mil|Location1.Y=2341.645mil|Location2.Y=2349.583mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.046mm &lt; 0.15mm) Between Pad U2-27(145.288mm,59.332mm) on Top Layer And Track (145.464mm,59.65mm)(146.101mm,60.286mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.046mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5756.405mil|Location2.X=5764.342mil|Location1.Y=2361.915mil|Location2.Y=2369.923mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5756.405mil|Location2.X=5764.342mil|Location1.Y=2361.915mil|Location2.Y=2369.923mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.047mm &lt; 0.15mm) Between Pad U2-28(146.419mm,59.827mm) on Top Layer And Track (146.101mm,60.286mm)(146.242mm,60.145mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.046mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6002.865mil|Location2.X=6007.802mil|Location1.Y=2117.673mil|Location2.Y=2122.61mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6002.865mil|Location2.X=6007.802mil|Location1.Y=2117.673mil|Location2.Y=2122.61mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad U2-39(152.253mm,53.993mm) on Top Layer And Track (152.535mm,53.852mm)(156mm,50.387mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5530.871mil|Location2.X=5538.026mil|Location1.Y=1824.676mil|Location2.Y=1831.832mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5530.871mil|Location2.X=5538.026mil|Location1.Y=1824.676mil|Location2.Y=1831.832mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.15mm) Between Pad U3-10(140.575mm,45.95mm) on Top Layer And Text "U3" (139mm,46.575mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5491.501mil|Location2.X=5498.656mil|Location1.Y=1824.676mil|Location2.Y=1831.832mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5491.501mil|Location2.X=5498.656mil|Location1.Y=1824.676mil|Location2.Y=1831.832mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.15mm) Between Pad U3-12(139.575mm,45.95mm) on Top Layer And Text "U3" (139mm,46.575mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5474.725mil|Location2.X=5484.725mil|Location1.Y=1824.109mil|Location2.Y=1831.763mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5474.725mil|Location2.X=5484.725mil|Location1.Y=1824.109mil|Location2.Y=1831.763mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.147mm &lt; 0.15mm) Between Pad U3-13(139.075mm,45.95mm) on Top Layer And Text "U3" (139mm,46.575mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.147mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5952.63mil|Location2.X=5959.785mil|Location1.Y=2466.19mil|Location2.Y=2473.345mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5952.63mil|Location2.X=5959.785mil|Location1.Y=2466.19mil|Location2.Y=2473.345mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.114mm &lt; 0.15mm) Between Pad U6-2(151.413mm,62.45mm) on Top Layer And Text "U4" (151.288mm,64.064mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.114mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5953.739mil|Location2.X=5958.676mil|Location1.Y=2472.925mil|Location2.Y=2477.862mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5953.739mil|Location2.X=5958.676mil|Location1.Y=2472.925mil|Location2.Y=2477.862mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad U6-3(151.413mm,63.1mm) on Top Layer And Text "U4" (151.288mm,64.064mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5882.896mil|Location2.X=5887.833mil|Location1.Y=2472.925mil|Location2.Y=2477.862mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5882.896mil|Location2.X=5887.833mil|Location1.Y=2472.925mil|Location2.Y=2477.862mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad U6-4(149.787mm,63.1mm) on Top Layer And Text "U4" (151.288mm,64.064mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5881.787mil|Location2.X=5888.942mil|Location1.Y=2466.19mil|Location2.Y=2473.345mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Christopher\OneDrive - The University of Manchester\Postdoc\Light Sensor\WTISSF-Light-Sensor\hardware\fr4\Light Sensor Prototype.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5881.787mil|Location2.X=5888.942mil|Location1.Y=2466.19mil|Location2.Y=2473.345mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.114mm &lt; 0.15mm) Between Pad U6-5(149.787mm,62.45mm) on Top Layer And Text "U4" (151.288mm,64.064mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.114mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,6 @@
+Added Pin To Net: NetName=GND Pin=U2-1
+Added Pin To Net: NetName=GND Pin=U2-16
+Added Pin To Net: NetName=GND Pin=U2-27
+Added Pin To Net: NetName=GND Pin=U2-39
+Added Room: Name=Light Sensor Prototype
+Added Room: Name=Power

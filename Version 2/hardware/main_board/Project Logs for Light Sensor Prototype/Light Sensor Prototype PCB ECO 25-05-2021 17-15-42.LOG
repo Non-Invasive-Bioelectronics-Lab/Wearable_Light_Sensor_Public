@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=MISO Pin=U2-2
+Removed Pin From Net: NetName=MOSI Pin=U2-3
+Added Pin To Net: NetName=MOSI Pin=U2-2
+Added Pin To Net: NetName=MISO Pin=U2-3
+Added Room: Name=Light Sensor Prototype
+Added Room: Name=Power

@@ -1,0 +1,18 @@
+Added Component: Designator=TP1(TP)
+Added Component: Designator=TP2(TP)
+Added Component: Designator=TP3(TP)
+Added Component: Designator=TP4(TP)
+Added Component: Designator=TP5(TP)
+Added Component: Designator=TP6(TP)
+Added Pin To Net: NetName=GND Pin=TP1-1
+Added Pin To Net: NetName=VBUS Pin=TP2-1
+Added Pin To Net: NetName=VBAT Pin=TP3-1
+Added Pin To Net: NetName=1V8 Pin=TP4-1
+Added Pin To Net: NetName=SDA Pin=TP5-1
+Added Pin To Net: NetName=SCL Pin=TP6-1
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component TP1 Test Point
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component TP2 Test Point
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component TP3 Test Point
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component TP4 Test Point
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component TP5 Test Point
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component TP6 Test Point

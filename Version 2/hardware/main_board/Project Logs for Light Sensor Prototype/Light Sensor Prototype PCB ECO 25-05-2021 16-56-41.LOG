@@ -1,0 +1,34 @@
+Added Component: Designator=C11(CAPC1608X90N)
+Add component (AddParameter): Name = "Manufacturer"; Value = "TDK"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "C1608X5R1C106M080AB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "0603 (1608 Metric)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ratings"; Value = "16V; X5R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Link"; Value = "https://uk.farnell.com/tdk/c1608x5r1c106m080ab/cap-10-f-16v-20-x5r-0603/dp/2525096?st=2521959"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "2525096"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=1V8 Pin=C11-1
+Added Pin To Net: NetName=GND Pin=C11-2
+Added Pin To Net: NetName=FLASH_CS Pin=U2-30
+Added Pin To Net: NetName=FLASH_CS Pin=U7-1
+Added Net: Name=FLASH_CS
+Added Pin To Net: NetName=FLASH_HOLD Pin=U2-37
+Added Pin To Net: NetName=FLASH_HOLD Pin=U7-7
+Added Net: Name=FLASH_HOLD
+Added Pin To Net: NetName=FLASH_SCK Pin=U2-36
+Added Pin To Net: NetName=FLASH_SCK Pin=U7-6
+Added Net: Name=FLASH_SCK
+Added Pin To Net: NetName=FLASH_SI Pin=U2-35
+Added Pin To Net: NetName=FLASH_SI Pin=U7-5
+Added Net: Name=FLASH_SI
+Added Pin To Net: NetName=FLASH_SO Pin=U2-33
+Added Pin To Net: NetName=FLASH_SO Pin=U7-2
+Added Net: Name=FLASH_SO
+Added Pin To Net: NetName=FLASH_WP Pin=U2-34
+Added Pin To Net: NetName=FLASH_WP Pin=U7-3
+Added Net: Name=FLASH_WP
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component C11 approved sub OK
+Added Room: Name=Light Sensor Prototype
+Added Room: Name=Power

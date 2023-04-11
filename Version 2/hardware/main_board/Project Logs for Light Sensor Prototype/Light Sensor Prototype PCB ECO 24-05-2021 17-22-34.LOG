@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=SCL Pin=U2-36
+Added Pin To Net: NetName=SCL Pin=U2-29
+Added Room: Name=Light Sensor Prototype

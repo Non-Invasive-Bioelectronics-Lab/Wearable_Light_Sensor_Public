@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=SDA Pin=U2-37
+Added Component: Designator=U7(SON127P500X600X60-9N)
+Add component (AddParameter): Name = "Availability"; Value = "Warning"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/AT25SL128A-MHE-T/Adesto%20Technologies/view-part/981769/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Adesto Technologies"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "AT25SL128A-MHE-T"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "UDFN-8 Adesto Technologies"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/AT25SL128A-MHE-T/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/AT25SL128A-MHE-T/Adesto%20Technologies/view-part/981769/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=SDA Pin=U2-28
+Added Pin To Net: NetName=GND Pin=U7-4
+Added Pin To Net: NetName=1V8 Pin=U7-8
+Added Pin To Net: NetName=GND Pin=U7-9
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component U7 AT25SL128A-MHE-T

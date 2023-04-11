@@ -1,0 +1,10 @@
+Change Component Comment : Designator=P4 Old Comment=MHDR2X5 New Comment=J-LINK Mini
+Added Pin To Net: NetName=VTref Pin=P4-1
+Added Pin To Net: NetName=SWDIO Pin=P4-2
+Added Pin To Net: NetName=GND Pin=P4-3
+Added Pin To Net: NetName=SWDCLK Pin=P4-4
+Added Pin To Net: NetName=GND Pin=P4-5
+Added Pin To Net: NetName=SWO Pin=P4-6
+Added Pin To Net: NetName=nRESET Pin=P4-10
+Added Pin To Net: NetName=TDI Pin=P4-8
+Added Net: Name=TDI

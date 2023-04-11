@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=GND Pin=TP1-1
+Removed Pin From Net: NetName=VBUS Pin=TP2-1
+Removed Pin From Net: NetName=VBAT Pin=TP3-1
+Removed Pin From Net: NetName=1V8 Pin=TP4-1
+Removed Member From Class: ClassName=Light Sensor Prototype Member=TP1
+Removed Member From Class: ClassName=Light Sensor Prototype Member=TP2
+Removed Member From Class: ClassName=Light Sensor Prototype Member=TP3
+Removed Member From Class: ClassName=Light Sensor Prototype Member=TP4
+Added Member To Class: ClassName=Memory Member=Component C? approved sub OK

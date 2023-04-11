@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=1V8 Pin=D1-A
+Removed Member From Class: ClassName=Light Sensor Prototype Member=D1
+Change Net Name : Old Net Name=NetLED2_A New Net Name=NetD2_A
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component C2 approved sub OK
+Added Room: Name=Light Sensor Prototype
+Added Room: Name=Power

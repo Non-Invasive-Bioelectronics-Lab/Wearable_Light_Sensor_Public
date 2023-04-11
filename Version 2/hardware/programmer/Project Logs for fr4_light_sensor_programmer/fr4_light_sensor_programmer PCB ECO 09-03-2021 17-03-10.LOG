@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=P4 Old Footprint=HDR2X5H New Footprint=HDR2X5_CEN
+Change Component Comment : Designator=P4 Old Comment=Header 5X2H New Comment=Header 5X2A
+Added Member To Class: ClassName=fr4_light_sensor_programmer Member=Component P4 Header 5X2A
+Added Member To Class: ClassName=fr4_light_sensor_programmer Member=Component P5 SWD

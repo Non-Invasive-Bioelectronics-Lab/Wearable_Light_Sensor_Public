@@ -1,0 +1,5 @@
+Change Net Name : Old Net Name=NetU2_2 New Net Name=ADXL_SPI_MOSI
+Change Net Name : Old Net Name=NetU2_3 New Net Name=ADXL_SPI_MISO
+Change Net Name : Old Net Name=NetU2_4 New Net Name=ADXL_SPI_CS
+Change Net Name : Old Net Name=NetU2_31 New Net Name=ADXL_INT
+Change Net Name : Old Net Name=NetU2_38 New Net Name=ADXL_SPI_SCLK

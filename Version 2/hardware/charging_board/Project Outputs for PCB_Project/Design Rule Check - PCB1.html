@@ -1,0 +1,422 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD22\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12/2/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">6:07:11 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc" class="file"><acronym title="C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc">C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">30</td></tr>
+</table>
+</td>
+</table><a name="ID4T4XLM0HMDAAONKZT4GRHHC15MIN541SMBFI4NELL0ZZG0OYAO3C"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3IT4WY1RBZXMHBKQJTR5APHYFHYKSLC03FSXGEC55PLL4RRTBZOO">Clearance Constraint (Gap=0.12mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYNOGR3QGODMKJ4KAHS1YYL1BHLLKOALW5DZBGJEFEJLLMAZZP1ZE">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSZFS142JBQ5ROK4V2XALAJL3RPKNB30YVA1FLPGJU01PKMJPWMKH">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4HFQQI0KVDIQOVHBMOZVECOI2LKSEZRTDGJ1EDFTAB5CGJCRGEKN">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHEIAQP3QFMVNFMDWAVVVAAZ4GM1ONHBQJ4PESZGL4GJV5IHZLO0B">Width Constraint (Min=0.254mm) (Max=0.508mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1TBG1FHAWQO1E0QSKWXAHOAJ0PID30SC0JMSCLLOAVKXYZZJPZ">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKBNV1VTLPZ3UNOK0JM5MPXOWMFZOCUPJZ0MS3LXZFP2M53SW0SC">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLE0ZVGBSBW2FOXSIEGZDKHWKZIZJMXCS0XQJGBDDJL3NLMCVIGUK">Hole To Hole Clearance (Gap=0.127mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1C1B0LJRICNAGVSYJRV5YEGZVGS33YVHW5LQ0DKCIW11TKFMFPVI">Minimum Solder Mask Sliver (Gap=0.076mm) (All),(All)</a></td>
+<td class="column2">22</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZ51OLNS2P5QFKWC0RGFZOMJMEJHMBBZRVFR4T3DLYSYAANVQEE0F">Silk To Solder Mask (Clearance=0.127mm) (IsPad),(All)</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXHEUTHBYAJMXFENYRO3CQW2OCFCA2FYMMLXA4TDHUQSRM4LONVHM">Silk to Silk (Clearance=0.127mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDM1RYSVCL12JWFHPLTOCKQLHX5NVSTLVUEHSTNQJZZWJLUFLQKOAE">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5R5VFDU0ZOQLG2WCU3TFIWB21PAGBXQXNYIQPZD3A4GLRLXAG1SK">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">30</td>
+</tr>
+</table><br><a name="ID1C1B0LJRICNAGVSYJRV5YEGZVGS33YVHW5LQ0DKCIW11TKFMFPVI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.076mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4160.253mil|Location2.X=4164.503mil|Location1.Y=3347.001mil|Location2.Y=3351.251mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4160.253mil|Location2.X=4164.503mil|Location1.Y=3347.001mil|Location2.Y=3351.251mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.085mm,11.335mm) on Top Solder And Arc (19.085mm,11.735mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4168.127mil|Location2.X=4172.377mil|Location1.Y=3339.127mil|Location2.Y=3343.377mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4168.127mil|Location2.X=4172.377mil|Location1.Y=3339.127mil|Location2.Y=3343.377mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.085mm,11.335mm) on Top Solder And Arc (19.485mm,11.335mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4160.253mil|Location2.X=4164.503mil|Location1.Y=3362.749mil|Location2.Y=3366.999mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4160.253mil|Location2.X=4164.503mil|Location1.Y=3362.749mil|Location2.Y=3366.999mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.085mm,11.735mm) on Top Solder And Arc (19.085mm,12.135mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4168.127mil|Location2.X=4172.377mil|Location1.Y=3354.875mil|Location2.Y=3359.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4168.127mil|Location2.X=4172.377mil|Location1.Y=3354.875mil|Location2.Y=3359.125mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.085mm,11.735mm) on Top Solder And Arc (19.485mm,11.735mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4168.127mil|Location2.X=4172.377mil|Location1.Y=3370.623mil|Location2.Y=3374.873mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4168.127mil|Location2.X=4172.377mil|Location1.Y=3370.623mil|Location2.Y=3374.873mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.085mm,12.135mm) on Top Solder And Arc (19.485mm,12.135mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4176.001mil|Location2.X=4180.251mil|Location1.Y=3347.001mil|Location2.Y=3351.251mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4176.001mil|Location2.X=4180.251mil|Location1.Y=3347.001mil|Location2.Y=3351.251mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.485mm,11.335mm) on Top Solder And Arc (19.485mm,11.735mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.875mil|Location2.X=4188.125mil|Location1.Y=3339.127mil|Location2.Y=3343.377mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.875mil|Location2.X=4188.125mil|Location1.Y=3339.127mil|Location2.Y=3343.377mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.485mm,11.335mm) on Top Solder And Arc (19.885mm,11.335mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4176.001mil|Location2.X=4180.251mil|Location1.Y=3362.749mil|Location2.Y=3366.999mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4176.001mil|Location2.X=4180.251mil|Location1.Y=3362.749mil|Location2.Y=3366.999mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.485mm,11.735mm) on Top Solder And Arc (19.485mm,12.135mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.875mil|Location2.X=4188.125mil|Location1.Y=3354.875mil|Location2.Y=3359.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.875mil|Location2.X=4188.125mil|Location1.Y=3354.875mil|Location2.Y=3359.125mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.485mm,11.735mm) on Top Solder And Arc (19.885mm,11.735mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.875mil|Location2.X=4188.125mil|Location1.Y=3370.623mil|Location2.Y=3374.873mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.875mil|Location2.X=4188.125mil|Location1.Y=3370.623mil|Location2.Y=3374.873mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.485mm,12.135mm) on Top Solder And Arc (19.885mm,12.135mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.749mil|Location2.X=4195.999mil|Location1.Y=3347.001mil|Location2.Y=3351.251mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.749mil|Location2.X=4195.999mil|Location1.Y=3347.001mil|Location2.Y=3351.251mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.885mm,11.335mm) on Top Solder And Arc (19.885mm,11.735mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4199.623mil|Location2.X=4203.873mil|Location1.Y=3339.127mil|Location2.Y=3343.377mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4199.623mil|Location2.X=4203.873mil|Location1.Y=3339.127mil|Location2.Y=3343.377mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.885mm,11.335mm) on Top Solder And Arc (20.285mm,11.335mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.749mil|Location2.X=4195.999mil|Location1.Y=3362.749mil|Location2.Y=3366.999mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.749mil|Location2.X=4195.999mil|Location1.Y=3362.749mil|Location2.Y=3366.999mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.885mm,11.735mm) on Top Solder And Arc (19.885mm,12.135mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4199.623mil|Location2.X=4203.873mil|Location1.Y=3354.875mil|Location2.Y=3359.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4199.623mil|Location2.X=4203.873mil|Location1.Y=3354.875mil|Location2.Y=3359.125mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.885mm,11.735mm) on Top Solder And Arc (20.285mm,11.735mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4199.623mil|Location2.X=4203.873mil|Location1.Y=3370.623mil|Location2.Y=3374.873mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4199.623mil|Location2.X=4203.873mil|Location1.Y=3370.623mil|Location2.Y=3374.873mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (19.885mm,12.135mm) on Top Solder And Arc (20.285mm,12.135mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4207.497mil|Location2.X=4211.747mil|Location1.Y=3347.001mil|Location2.Y=3351.251mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4207.497mil|Location2.X=4211.747mil|Location1.Y=3347.001mil|Location2.Y=3351.251mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (20.285mm,11.335mm) on Top Solder And Arc (20.285mm,11.735mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4207.497mil|Location2.X=4211.747mil|Location1.Y=3362.749mil|Location2.Y=3366.999mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4207.497mil|Location2.X=4211.747mil|Location1.Y=3362.749mil|Location2.Y=3366.999mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.075mm &lt; 0.076mm) Between Arc (20.285mm,11.735mm) on Top Solder And Arc (20.285mm,12.135mm) on Top Solder [Top Solder] Mask Sliver [0.075mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3666.072mil|Location2.X=3672.506mil|Location1.Y=3366.968mil|Location2.Y=3375.51mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3666.072mil|Location2.X=3672.506mil|Location1.Y=3366.968mil|Location2.Y=3375.51mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.026mm &lt; 0.076mm) Between Pad USB_FEM_1-(6.234mm,11.942mm) on Multi-Layer And Pad USB_FEM_1-1(7.564mm,12.733mm) on Multi-Layer [Top Solder] Mask Sliver [0.026mm] / [Bottom Solder] Mask Sliver [0.026mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3666.072mil|Location2.X=3672.425mil|Location1.Y=3087.074mil|Location2.Y=3095.674mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3666.072mil|Location2.X=3672.425mil|Location1.Y=3087.074mil|Location2.Y=3095.674mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.026mm &lt; 0.076mm) Between Pad USB_FEM_1-(6.234mm,5.142mm) on Multi-Layer And Pad USB_FEM_1-4(7.564mm,4.351mm) on Multi-Layer [Top Solder] Mask Sliver [0.026mm] / [Bottom Solder] Mask Sliver [0.026mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3705.56mil|Location2.X=3709.81mil|Location1.Y=3353.499mil|Location2.Y=3357.749mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3705.56mil|Location2.X=3709.81mil|Location1.Y=3353.499mil|Location2.Y=3357.749mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.063mm &lt; 0.076mm) Between Pad USB_FEM_1-1(7.564mm,12.733mm) on Multi-Layer And Pad USB_FEM_1-B12(6.934mm,11.417mm) on Top Layer [Top Solder] Mask Sliver [0.063mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3711.338mil|Location2.X=3715.588mil|Location1.Y=3104.838mil|Location2.Y=3109.088mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3711.338mil|Location2.X=3715.588mil|Location1.Y=3104.838mil|Location2.Y=3109.088mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.063mm &lt; 0.076mm) Between Pad USB_FEM_1-4(7.564mm,4.351mm) on Multi-Layer And Pad USB_FEM_1-A12(8.284mm,5.667mm) on Top Layer [Top Solder] Mask Sliver [0.063mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4343.854mil|Location2.X=4348.104mil|Location1.Y=3365.807mil|Location2.Y=3370.057mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4343.854mil|Location2.X=4348.104mil|Location1.Y=3365.807mil|Location2.Y=3370.057mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.022mm &lt; 0.076mm) Between Pad USB_MALE_1-3(24.05mm,12.575mm) on Multi-Layer And Pad USB_MALE_1-A12(24.25mm,11.75mm) on Top Layer [Top Solder] Mask Sliver [0.022mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDZ51OLNS2P5QFKWC0RGFZOMJMEJHMBBZRVFR4T3DLYSYAANVQEE0F"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.127mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.946mil|Location2.X=3741.28mil|Location1.Y=3363.792mil|Location2.Y=3368.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.946mil|Location2.X=3741.28mil|Location1.Y=3363.792mil|Location2.Y=3368.125mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.127mm) Between Pad USB_FEM_1-1(7.564mm,12.733mm) on Multi-Layer And Track (8.334mm,11.468mm)(8.334mm,12.163mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3478.008mil|Location2.X=3484.258mil|Location1.Y=3402.793mil|Location2.Y=3409.043mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3478.008mil|Location2.X=3484.258mil|Location1.Y=3402.793mil|Location2.Y=3409.043mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.127mm) Between Pad USB_FEM_1-2(3.034mm,12.862mm) on Multi-Layer And Track (0.334mm,13.011mm)(1.595mm,13.011mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3478.617mil|Location2.X=3484.867mil|Location1.Y=3052.532mil|Location2.Y=3058.782mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3478.617mil|Location2.X=3484.867mil|Location1.Y=3052.532mil|Location2.Y=3058.782mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.105mm &lt; 0.127mm) Between Pad USB_FEM_1-3(3.034mm,4.222mm) on Multi-Layer And Track (0.361mm,4.042mm)(1.621mm,4.042mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.105mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3576.245mil|Location2.X=3582.495mil|Location1.Y=3052.573mil|Location2.Y=3058.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3576.245mil|Location2.X=3582.495mil|Location1.Y=3052.573mil|Location2.Y=3058.823mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.115mm &lt; 0.127mm) Between Pad USB_FEM_1-3(3.034mm,4.222mm) on Multi-Layer And Track (4.457mm,4.042mm)(6.272mm,4.042mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.115mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.678mil|Location2.X=3668.941mil|Location1.Y=3047.99mil|Location2.Y=3059.162mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.678mil|Location2.X=3668.941mil|Location1.Y=3047.99mil|Location2.Y=3059.162mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.108mm &lt; 0.127mm) Between Pad USB_FEM_1-4(7.564mm,4.351mm) on Multi-Layer And Track (4.457mm,4.042mm)(6.272mm,4.042mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.108mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.946mil|Location2.X=3741.28mil|Location1.Y=3086.846mil|Location2.Y=3091.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.946mil|Location2.X=3741.28mil|Location1.Y=3086.846mil|Location2.Y=3091.18mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.127mm) Between Pad USB_FEM_1-4(7.564mm,4.351mm) on Multi-Layer And Track (8.334mm,4.928mm)(8.334mm,5.394mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3735.988mil|Location2.X=3742.238mil|Location1.Y=3337.897mil|Location2.Y=3344.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3735.988mil|Location2.X=3742.238mil|Location1.Y=3337.897mil|Location2.Y=3344.147mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.127mm) Between Pad USB_FEM_1-A1(8.284mm,11.167mm) on Top Layer And Track (8.334mm,11.468mm)(8.334mm,12.163mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.946mil|Location2.X=3741.28mil|Location1.Y=3105.179mil|Location2.Y=3109.513mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Mahdi\OneDrive - The University of Manchester\Project_4_ESD_Overcurrent_Protection\Protection Circuit\PCB_Project_5\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.946mil|Location2.X=3741.28mil|Location1.Y=3105.179mil|Location2.Y=3109.513mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.127mm) Between Pad USB_FEM_1-A12(8.284mm,5.667mm) on Top Layer And Track (8.334mm,4.928mm)(8.334mm,5.394mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

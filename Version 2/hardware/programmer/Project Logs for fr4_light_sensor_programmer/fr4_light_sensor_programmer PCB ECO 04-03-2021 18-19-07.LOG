@@ -1,0 +1,27 @@
+Added Component: Designator=R9(RESC1608X55N)
+Add component (AddParameter): Name = "Manufacturer 1"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number 1"; Value = "RC0603FR-0710KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "0603 (1608 Metric)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ratings"; Value = "1/10W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SCDType"; Value = "spec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "311-10.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "150R"; VariantName = "[No Variations]"
+Added Component: Designator=SW1(TACT-SWITCH-TS1143)
+Add component (AddParameter): Name = "Function"; Value = "Speed"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer 1"; Value = "Bond-Tact"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number 1"; Value = "TS-1143-WP-300"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Brass/Nylon/Ag plating"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "6.5x6.5mm; 4.3mm stem"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SCDType"; Value = "spec"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=nRESET Pin=R9-1
+Added Pin To Net: NetName=GND Pin=SW1-2
+Added Pin To Net: NetName=GND Pin=SW1-2
+Added Pin To Net: NetName=NetR9_2 Pin=R9-2
+Added Pin To Net: NetName=NetR9_2 Pin=SW1-1
+Added Pin To Net: NetName=NetR9_2 Pin=SW1-1
+Added Net: Name=NetR9_2
+Added Member To Class: ClassName=fr4_light_sensor_programmer Member=Component R9 Thick Film
+Added Member To Class: ClassName=fr4_light_sensor_programmer Member=Component SW1 SW_THT_PB_4.3mm
+Added Room: Name=fr4_light_sensor_programmer

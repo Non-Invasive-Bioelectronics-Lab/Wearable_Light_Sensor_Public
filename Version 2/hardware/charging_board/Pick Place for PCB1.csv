@@ -1,0 +1,8 @@
+"Designator","Comment","Layer","Footprint","Mid X","Mid Y","Rotation","Description"
+"U1","TPD1S414YZR","Top","FP-YZ0012-C02-MFG","19.6850","11.7348","0","IC PWR SWITCH N-CHAN 1:1 12DSBGA"
+"F1","0466.200NRHF","Top","FP-0466-MFG","12.2174","7.0358","270","FUSE BOARD MNT 200MA 125VAC/VDC"
+"D1","SMAJ5.0A","Top","BOUR-SMA-2_V","16.0020","5.6642","90","SMAJ Transient Voltage Suppressor Diode Series, 3.5 V, -55 to 150 degC, 2-Pin SMA, RoHS, Tape and Reel"
+"C2","Cap","Top","6-0805_N","19.6850","14.7828","0","0805F225M500NT"
+"C1","Cap","Top","6-0805_N","19.4310","3.3274","90","0805B105K500NT"
+"USB_FEM_1","U262-241N-4BV64","Top","usbc-female","5.6592","8.5419","270","Female USB-TYPE-C"
+"USB_MALE_1","GT-USB-8012A","Top","PCBComponent_1","24.8998","8.8750","90","MALE-USB-TYPE-C"

@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=AS_INT Pin=U2-15
+Removed Pin From Net: NetName=ADXL_INT Pin=U2-22
+Added Pin To Net: NetName=AS_INT Pin=U2-22
+Added Pin To Net: NetName=ADXL_INT Pin=U2-31

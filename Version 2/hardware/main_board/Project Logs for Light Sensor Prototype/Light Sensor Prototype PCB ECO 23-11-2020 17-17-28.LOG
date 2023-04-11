@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=VBAT Pin=B1-1
+Removed Pin From Net: NetName=VBAT Pin=B1-1
+Removed Pin From Net: NetName=GND Pin=B1-2
+Removed Pin From Net: NetName=GND Pin=B?-3
+Change Component Designator: OldDesignator=B? NewDesignator=B1

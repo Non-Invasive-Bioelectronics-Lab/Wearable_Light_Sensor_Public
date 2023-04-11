@@ -1,0 +1,39 @@
+Removed Pin From Net: NetName=GND Pin=J1-A1
+Removed Pin From Net: NetName=VBUS Pin=J1-A4
+Removed Pin From Net: NetName=CC1 Pin=J1-A5
+Removed Pin From Net: NetName=VBUS Pin=J1-A9
+Removed Pin From Net: NetName=GND Pin=J1-A12
+Removed Pin From Net: NetName=GND Pin=J1-B1
+Removed Pin From Net: NetName=VBUS Pin=J1-B4
+Removed Pin From Net: NetName=CC2 Pin=J1-B5
+Removed Pin From Net: NetName=VBUS Pin=J1-B9
+Removed Pin From Net: NetName=GND Pin=J1-B12
+Removed Member From Class: ClassName=Power Member=J1
+Change component parameters: Designator = "R1" ("R1"); Footprint = "RESC1608X55N"; UniqueID = "\LMRRGTBG" ("\LMRRGTBG")
+Change component parameters (AddParameter): Name = "Manufacturer 1"; Value = "Yageo"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number 1"; Value = "RC0603FR-0710KL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package / Case"; Value = "0603 (1608 Metric)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ratings"; Value = "1/10W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SCDType"; Value = "spec"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "311-10.0KHRCT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "±1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "20"; VariantName = "[No Variations]"
+Added Component: Designator=J(JAE_DX07S016JA1R1500)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DigiKey-Purchase-URL"; Value = "https://snapeda.com/shop?store=DigiKey&id=4551013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "JAE Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "DX07S016JA1R1500"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/DX07S016JA1R1500/JAE%20Electronics/view-part/4551013/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J-1
+Added Pin To Net: NetName=VBUS Pin=J-2
+Added Pin To Net: NetName=CC1 Pin=J-3
+Added Pin To Net: NetName=CC2 Pin=J-9
+Added Pin To Net: NetName=VBUS Pin=J-11
+Added Pin To Net: NetName=GND Pin=J-12
+Added Member To Class: ClassName=Power Member=Component J DX07S016JA1R1500
+Added Room: Name=Light Sensor Prototype
+Added Room: Name=Power

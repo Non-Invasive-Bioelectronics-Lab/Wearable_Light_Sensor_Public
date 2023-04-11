@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=AS_INT Pin=U2-4
+Added Pin To Net: NetName=AS_INT Pin=U2-15
+Added Room: Name=Light Sensor Prototype
+Added Room: Name=Power

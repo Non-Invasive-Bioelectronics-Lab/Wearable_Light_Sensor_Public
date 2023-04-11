@@ -1,0 +1,10 @@
+Change Component Designator: OldDesignator=C? NewDesignator=C9
+Change Component Designator: OldDesignator=R? NewDesignator=R9
+Change Component Designator: OldDesignator=R? NewDesignator=R10
+Change Component Designator: OldDesignator=R? NewDesignator=R11
+Change Component Designator: OldDesignator=R? NewDesignator=R12
+Added Member To Class: ClassName=Power Member=Component R10 Thick Film
+Added Member To Class: ClassName=Power Member=Component R11 Thick Film
+Added Member To Class: ClassName=Power Member=Component R12 Thick Film
+Added Room: Name=Light Sensor Prototype
+Added Room: Name=Power

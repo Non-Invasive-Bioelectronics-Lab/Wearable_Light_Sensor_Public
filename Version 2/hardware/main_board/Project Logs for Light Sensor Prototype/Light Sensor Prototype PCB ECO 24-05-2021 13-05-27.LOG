@@ -1,0 +1,36 @@
+Removed Pin From Net: NetName=SDA Pin=TP5-1
+Removed Pin From Net: NetName=SCL Pin=TP6-1
+Removed Member From Class: ClassName=Light Sensor Prototype Member=TP5
+Removed Member From Class: ClassName=Light Sensor Prototype Member=TP6
+Removed Member From Class: ClassName=Light Sensor Prototype Member=U5
+Added Component: Designator=C10(CAPC1608X90N)
+Add component (AddParameter): Name = "Manufacturer"; Value = "TDK"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "C1608X5R1C106M080AB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "0603 (1608 Metric)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ratings"; Value = "16V; X5R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Link"; Value = "https://uk.farnell.com/tdk/c1608x5r1c106m080ab/cap-10-f-16v-20-x5r-0603/dp/2525096?st=2521959"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "2525096"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Component: Designator=U6(MAX31889ALT)
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://pdfserv.maximintegrated.com/en/ds/MAX31889.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.8mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Maxim Integrated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "MAX31889ALT+"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser2 Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser2 Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=1V8 Pin=C10-1
+Added Pin To Net: NetName=GND Pin=C10-2
+Added Pin To Net: NetName=SCL Pin=U6-2
+Added Pin To Net: NetName=SDA Pin=U6-3
+Added Pin To Net: NetName=GND Pin=U6-5
+Added Pin To Net: NetName=1V8 Pin=U6-6
+Change Net Name : Old Net Name=NetD2_A New Net Name=NetD1_A
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component C10 approved sub OK
+Added Member To Class: ClassName=Power Member=Component J1 DX07S016JA1R1500
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component U3 ADXL346ACCZ-RL
+Added Member To Class: ClassName=Light Sensor Prototype Member=Component U6 MAX31889ALT+
+Added Room: Name=Light Sensor Prototype
+Added Room: Name=Power

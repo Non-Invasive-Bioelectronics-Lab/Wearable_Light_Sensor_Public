@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=5V Pin=R2-1
+Removed Pin From Net: NetName=5V Pin=R4-1
+Removed Pin From Net: NetName=5V Pin=R6-1
+Removed Pin From Net: NetName=5V Pin=R8-1
+Added Pin To Net: NetName=VBUS Pin=R2-1
+Added Pin To Net: NetName=VBUS Pin=R4-1
+Added Pin To Net: NetName=VBUS Pin=R6-1
+Added Pin To Net: NetName=VBUS Pin=R8-1
+Added Room: Name=fr4_light_sensor_programmer
