@@ -1,0 +1,5 @@
+Whilst our aim is to create a useful tool, all designs are provided as-is. The authors do not guarantee that the information provided in the design files is complete or appropriate for any particular application. It is possible that our software, hardware or its accompanying documentation contain bugs or mistakes which any users accept responsibility for. Users should perform their own pre- and post- manufacturing tests, including calibration, as appropirate for their needs. 
+
+If you choose to use the project hardware and/or software you do so ENTIRELY AT YOUR OWN RISK. The software and hardware designs are distributed WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. It is up to YOU to assess the risks you are taking in all cases, and ensure YOUR compliance with all of your local safety, data protection, ethical, and other requirements.
+
+Text based upon https://openeeg.sourceforge.net/doc/ under a Creative Commons license. 
